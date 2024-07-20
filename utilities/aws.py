@@ -52,8 +52,8 @@ def upload_document(file, location='', bucket_name = 'tushar-default-bucket'):
     [content_type, fileData] = file.split(';base64,')
     content_type = content_type.split(':')[1]
     
-    from bson import ObjectId
-    document_id = str(ObjectId())
+    from uuid import uuid4
+    document_id = str(uuid4())
     
     obj = s3.Object(
         bucket_name,
