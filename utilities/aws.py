@@ -34,7 +34,7 @@ s3_client = boto3.client(
 )
 
 
-def get_url(location='', bucket_name = 'paperplane-s3'):
+def get_url(location='', bucket_name = 'tushar-default-bucket'):
     
     url = s3_client.generate_presigned_url(
         'get_object',
@@ -47,7 +47,7 @@ def get_url(location='', bucket_name = 'paperplane-s3'):
     return url
 
 
-def upload_document(file, location='', bucket_name = 'paperplane-s3'):
+def upload_document(file, location='', bucket_name = 'tushar-default-bucket'):
 
     [content_type, fileData] = file.split(';base64,')
     content_type = content_type.split(':')[1]
